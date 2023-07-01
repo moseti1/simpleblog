@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
-{% block title %}Derlet Blog Post {% endblock %}
+{% block title %}Delet Blog Post ...  {% endblock %}
 {% block content %}
 
 <br><br>
-  <h1>Add Post</h1>
+  <h1>Delete Post ... </h1>
   <br><br>
+  <h3> Delete: {{ post.title }} </h3>
+
   <div class="form-group">
   <form method="POST" class="form-control">
     {% csrf_token %}
     
-    <button type="submit" class="btn btn-secondary">Delete Post</button>
+   <strong> Are you sure you want to delete the post?</strong><br/>
+    <button  class="btn btn-secondary">Delete Post</button>
   
 
  </div>
