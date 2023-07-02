@@ -13,7 +13,7 @@
 
 
 </small><br><hr>
-{{ post.body }}
+{{ post.body | safe  }}
 
 <br><br>
 <a href="{% url 'home' %}"> Back</a>
