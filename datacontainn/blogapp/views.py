@@ -9,7 +9,7 @@ from .models import Post
 
 # Create your views here.
 #def home(request):
-#   return render(request, 'home.html',{})
+#   return render(request, 'home.html',{'cats'})
 
 
 class HomeView(ListView):
@@ -17,6 +17,9 @@ class HomeView(ListView):
     template_name = 'home.html'
     ordering = ['-post_date']
 
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category = cats)
+    return render(request, 'categories.html',{'cats': cats,'category_posts': category_posts})
 
 
 
