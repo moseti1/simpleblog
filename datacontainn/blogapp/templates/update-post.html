@@ -3,8 +3,9 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %}
 <br><br>
-  <h1>Update Post....</h1>
+  <h1>Update Post....!!</h1>
   <br><br>
   <div class="form-group">
   <form method="POST" class="form-control">
@@ -14,9 +15,12 @@
   
 
  </div>
-
+ 
  {% else %}
  <strong> You are not an Authorised User</strong>
+
+ {% endif %}
+
  {% endif %}
  
 {% endblock %}

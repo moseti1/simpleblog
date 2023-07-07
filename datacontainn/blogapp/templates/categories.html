@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{ cats }} Categories</h1>
 
+{% if category_posts %}
+<h1> {{ cats }} Categories</h1>
+<ul>
 {% for post in category_posts %}
 
 <li><a href="{% url 'article-details' post.pk %}">
@@ -22,7 +24,10 @@
      </small> 
      {{ post.body | slice:":200" | safe }}</li>
 {% endfor %}
+</ul>
+{% else %}
 
-
+<h2>Sorry this page does not exist</h2>
+{% endif %}
 
 {% endblock %}
